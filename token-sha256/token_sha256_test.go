@@ -5,12 +5,13 @@ import (
 	"encoding/hex"
 	"fmt"
 	"strconv"
+	"strings"
 	"testing"
 	"time"
 )
 
 func TestTokenSha256(t *testing.T) {
-	appName := "app-test"
+	appName := strings.ReplaceAll("app-test", "-", "")
 	version := "8.0.30"
 	salt := "james" // 盐值：降低由于用户数据被盗而带来的密码泄露风险
 	input := appName + version + salt
