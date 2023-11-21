@@ -11,9 +11,9 @@ import (
 )
 
 func TestTokenSha256(t *testing.T) {
-	appName := strings.ReplaceAll("app-test", "-", "")
-	version := "8.0.30"
-	salt := "james" // 盐值：降低由于用户数据被盗而带来的密码泄露风险
+	appName := strings.ReplaceAll("test-app", "-", "")
+	version := "8.0"
+	salt := "mysql" // 盐值：降低由于用户数据被盗而带来的密码泄露风险
 	input := appName + version + salt
 	sha256Obj := sha256.New()
 	sha256Obj.Write([]byte(input))
